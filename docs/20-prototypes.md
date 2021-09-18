@@ -7,13 +7,13 @@
 
 ## List of Prototypes
 
-| Prototype                               | Description                                                                                                  |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| [Personal Finance Assistant](/pfa.jnlp) | application to track personal finance, with reports such personal Balance sheets & Profit & Lost Statements. |
-| [Utilities](/ut.jnlp)                   | Desktop Utilities software that run at the system tray to do file operations.                                |
-| [BizSuite](/bs.jnlp)                    | Business application - Sales and Purchases                                                                   |
-| [Inventory Suite](/is.jnlp)             | Business application - Inventory management                                                                  |
-| [Demo Toolkit](/demo.jnlp)              | Demo of all forms available in G5 Java Application Framework                                                 |
+| Prototype                               | Description                                                                                                         |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| [Personal Finance Assistant](/pfa.jnlp) | application to track personal finance, with reports such personal Balance sheets & Profit & Lost Statements.        |
+| [Utilities](/ut.jnlp)                   | Desktop Utilities software that run at the system tray to do file operations. (See [screen shot](#utilities) below) |
+| [BizSuite](/bs.jnlp)                    | Business application - Sales and Purchases                                                                          |
+| [Inventory Suite](/is.jnlp)             | Business application - Inventory management                                                                         |
+| [Demo Toolkit](/demo.jnlp)              | Demo of all forms available in G5 Java Application Framework                                                        |
 
 ## How to Run Demo
 
@@ -36,3 +36,7 @@
   - Java Web Start will download all required libraries and start the program.
 
 ![java-security-warning](java-security-warning.png)
+
+## Utilities {#utilities}
+
+![ut-systray.png](ut-systray.png)
