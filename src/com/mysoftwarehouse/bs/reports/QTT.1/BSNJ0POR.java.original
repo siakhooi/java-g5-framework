@@ -1,0 +1,103 @@
+/*
+ * Copyright 2007 GQR Solutions. All rights reserved.
+ * PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+package com.mysoftwarehouse.bs.NO.N;
+
+import com.gqrsoft.g5.developer.form.ReportExecutionForm;
+import com.gqrsoft.g5.developer.publicobject.ReportExecutionException;
+import com.mysoftwarehouse.bs.conf.DONGLE;
+import com.mysoftwarehouse.bs.conf.MAP;
+import com.mysoftwarehouse.bs.conf.REPORT;
+import com.mysoftwarehouse.bs.data.GET;
+import com.mysoftwarehouse.bs.data.PorEnum;
+import com.mysoftwarehouse.bs.db.CFG.CFGI;
+import com.mysoftwarehouse.bs.db.POR.POR_NJ0POR;
+import java.io.InputStream;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author Ng Siak Hooi
+ */
+public class BSNJ0POR extends ReportExecutionForm {
+
+    @Override
+    protected void initReport() throws ReportExecutionException {
+        String r = REPORT.REPORT_PATH + "BSNX0POR.jasper";
+        InputStream in = BSNJ0POR.class.getResourceAsStream(r);
+        super.loadCompiledReport(in);
+    }
+    String FrmPor = "";
+    String rsNamePors = "BSNJ0POR.rsPors";
+    boolean hasPors = false;
+    String rsNameCmp = "BSNJ0POR.rsCmp";
+
+    @Override
+    protected void prepareExecution() throws ReportExecutionException {
+        try {
+            String rsName = "BSNJ0POR";
+            FrmPor = cmd.in.map.texts.get(MAP.BSPOR.FROM);
+            String Cmp = GET.Cmp(this);
+            POR_NJ0POR.select(this, rsName, Cmp, FrmPor);
+            super.useResultSetDataSource(rsName);
+            POR_NJ0POR.selectPors(this, rsNamePors, Cmp, FrmPor);
+            if (cmd.db.next(rsNamePors)) {
+                hasPors = true;
+                cmd.db.beforeFirst(rsNamePors);
+            }
+            POR_NJ0POR.selectCmp(this, rsNameCmp, Cmp);
+        } catch (SQLException ex) {
+            cmd.log.severe("BSNJ0POR.error", ex);
+        }
+    }
+
+    @Override
+    protected void initExecution() throws ReportExecutionException {
+        String Cmp = GET.Cmp(this);
+        super.putParameter(REPORT.USER_ID, Cmp);
+
+        String printDte = cmd.cal.getISO8601FormattedNow();
+        super.putParameter(REPORT.PRINT_DATE, printDte);
+
+        super.putResourceBundle(REPORT.RESOURCEBUNDLENAME);
+
+        String fmt = cmd.in.map.texts.get(MAP.BSCFG.PORFORMAT);
+        switch (PorEnum.Format.get(fmt)) {
+            case B:
+                InputStream por_hb = BSNJ0POR.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSNX0POR_HB.jasper");
+                super.putCompiledSubreport("BSNX0POR.SR.POR_H", por_hb);
+                super.putDataSource("BSNX0POR.DS.POR_H", cmd.db.getResultSet(rsNameCmp));
+                break;
+            case T:
+                InputStream por_ht = BSNJ0POR.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSNX0POR_HT.jasper");
+                super.putCompiledSubreport("BSNX0POR.SR.POR_H", por_ht);
+                super.putDataSource("BSNX0POR.DS.POR_H", cmd.db.getResultSet(rsNameCmp));
+                break;
+            case I:
+                InputStream por_hi = BSNJ0POR.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSNX0POR_HI.jasper");
+                super.putCompiledSubreport("BSNX0POR.SR.POR_H", por_hi);
+                super.putDataSource("BSNX0POR.DS.POR_H", cmd.db.getResultSet(rsNameCmp));
+
+                super.putParameter("BSNX0POR.IMG.HEAD", CFGI.getLetterHead(this, Cmp));
+                break;
+        }
+
+        InputStream pors = BSNJ0POR.class.getResourceAsStream(
+                REPORT.REPORT_PATH + "BSNX0POR_S.jasper");
+        super.putCompiledSubreport("BSNX0POR.SR.PORS", pors);
+        super.putDataSource("BSNX0POR.DS.PORS", cmd.db.getResultSet(rsNamePors));
+        super.putParameter("BSNX0POR.HasPORS", new Boolean(hasPors));
+
+        super.putParameter(REPORT.SHOW_DEMO, new Boolean(DONGLE.isDemoMode(this)));
+        super.putParameter(REPORT.CURCDE, GET.CurCde(this));
+    }
+
+    @Override
+    public String getFormTitle() {
+        return "BSNJ0POR.title";
+    }
+}

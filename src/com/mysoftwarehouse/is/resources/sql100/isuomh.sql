@@ -1,0 +1,28 @@
+-- Copyright 2007 GQR Solutions. All rights reserved.
+-- PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+--
+-- uom History
+--
+
+DROP SEQUENCE ISUOMHSEQ IF EXISTS;
+
+CREATE SEQUENCE ISUOMHSEQ AS INTEGER
+START WITH 0 INCREMENT BY 1;
+
+DROP TABLE ISUOMH IF EXISTS;
+
+CREATE CACHED TABLE ISUOMH(
+        Whs     CHAR(10) NOT NULL,
+        HisSeq	INT NOT NULL,
+	HisDte	DATETIME,
+	HisAct	CHAR(1),
+	HisRmk	VARCHAR(200),
+-- COPY FROM ISUOM START
+        Uom     CHAR(10) NOT NULL,
+        Nme     VARCHAR(30) NOT NULL,
+        Remark  VARCHAR(200),
+-- COPY FROM ISUOM END
+	PRIMARY KEY(Whs, HisSeq));
+	
+
+	

@@ -1,0 +1,44 @@
+-- Copyright 2007 GQR Solutions. All rights reserved.
+-- PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+--
+-- sales adjustment tables
+--
+
+DROP TABLE BSSA IF EXISTS;
+
+CREATE CACHED TABLE BSSA(
+	Cmp	CHAR(10),
+	Adj	CHAR(10),
+	Nme	CHAR(30),
+	Typ	CHAR(1),
+	Prio	INT,
+	Amt	DECIMAL,
+	Dflt	CHAR(1),
+	Status 	CHAR(1),
+	PRIMARY KEY(Cmp, Adj));
+
+-- History tables
+
+DROP SEQUENCE BSSAHSEQ IF EXISTS;
+
+CREATE SEQUENCE BSSAHSEQ AS INTEGER
+START WITH 0 INCREMENT BY 1;
+
+DROP TABLE BSSAH IF EXISTS;
+
+CREATE CACHED TABLE BSSAH(
+	Cmp	CHAR(10),
+	HisSeq	INT NOT NULL,
+	HisDte	DATETIME,
+	HisAct	CHAR(1),
+	HisRmk	VARCHAR(200),
+-- COPY FROM BSSA START
+	Adj	CHAR(10),
+	Nme	CHAR(30),
+	Typ	CHAR(1),
+	Prio	INT,
+	Amt	DECIMAL,
+	Dflt	CHAR(1),
+	Status 	CHAR(1),
+-- COPY FROM BSSA END
+	PRIMARY KEY(Cmp, HisSeq));

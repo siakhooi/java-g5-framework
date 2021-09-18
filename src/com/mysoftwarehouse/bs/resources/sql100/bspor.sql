@@ -1,0 +1,72 @@
+-- Copyright 2007 GQR Solutions. All rights reserved.
+-- PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+--
+-- bizsuite.db.purchase-po.100.sql - initialize purchase PO tables
+--
+
+DROP TABLE BSPOR IF EXISTS;
+
+CREATE CACHED TABLE BSPOR(
+	Cmp		CHAR(10),
+	PorNo		CHAR(20),
+	Sup		CHAR(10),
+	PorDte		DATETIME,
+	ShpDte		DATETIME,
+	RefNum  	VARCHAR(20),
+	Remark		VARCHAR(200),
+	Status 		CHAR(1),
+        TtlGrsAmt       DECIMAL,
+        TtlAmt          DECIMAL,
+	PRIMARY KEY(Cmp, PorNo));
+
+DROP TABLE BSPORD IF EXISTS;
+
+CREATE CACHED TABLE BSPORD(
+	Cmp	CHAR(10),
+	PorNo	CHAR(20),
+	Itm	CHAR(10),
+	Price	DECIMAL,
+	Qty	DECIMAL,
+	TtlAmt	DECIMAL,
+	PRIMARY KEY(Cmp, PorNo, Itm));
+
+DROP TABLE BSPORA IF EXISTS;
+
+CREATE CACHED TABLE BSPORA(
+	Cmp	CHAR(10),
+	PorNo	CHAR(20),
+	Add1	VARCHAR(60),
+	Add2	VARCHAR(60),
+	City	VARCHAR(30),
+	ZipCde	CHAR(5),
+	Stte	VARCHAR(30),
+	Ctry	VARCHAR(30),
+	Tel	VARCHAR(15),
+	Fax	VARCHAR(15),
+	Remark	VARCHAR(200),
+	PRIMARY KEY(Cmp, PorNo));
+
+DROP TABLE BSPORC IF EXISTS;
+
+CREATE CACHED TABLE BSPORC(
+	Cmp	CHAR(10),
+	PorNo	CHAR(20),
+	FstNme	VARCHAR(30),
+	LstNme	VARCHAR(30),
+	Title	VARCHAR(30),
+	Tel	VARCHAR(15),
+	Fax	VARCHAR(15),
+	Mobile	VARCHAR(15),
+	Email	VARCHAR(50),
+	Remark	VARCHAR(200),
+	PRIMARY KEY(Cmp, PorNo));
+
+DROP TABLE BSPORS IF EXISTS;
+
+CREATE CACHED TABLE BSPORS(
+	Cmp	CHAR(10),
+	PorNo	CHAR(20),
+	Seq	INT,
+	Text	CHAR(80),
+	PRIMARY KEY(Cmp, PorNo, Seq));
+

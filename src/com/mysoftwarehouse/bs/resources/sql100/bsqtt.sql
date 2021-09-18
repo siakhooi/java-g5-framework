@@ -1,0 +1,87 @@
+-- Copyright 2007 GQR Solutions. All rights reserved.
+-- PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+--
+-- sales quotation tables
+--
+
+DROP TABLE BSQTT IF EXISTS;
+
+CREATE CACHED TABLE BSQTT(
+	Cmp		CHAR(10),
+	QttNo		CHAR(20),
+	Cus		CHAR(10),
+	QttDte		DATETIME,
+	ExpDte		DATETIME,
+	RefNum  	VARCHAR(20),
+	Remark		VARCHAR(200),
+	Status 		CHAR(1),
+        TtlGrsAmt       DECIMAL,
+        TtlAmt          DECIMAL,
+	PRIMARY KEY(Cmp, QttNo));
+
+DROP TABLE BSQTTD IF EXISTS;
+
+CREATE CACHED TABLE BSQTTD(
+	Cmp	CHAR(10),
+	QttNo	CHAR(20),
+	Itm	CHAR(10),
+	Price	DECIMAL,
+	Qty	DECIMAL,
+	TtlAmt	DECIMAL,
+	PRIMARY KEY(Cmp, QttNo, Itm));
+
+DROP TABLE BSQTTA IF EXISTS;
+
+CREATE CACHED TABLE BSQTTA(
+	Cmp	CHAR(10),
+	QttNo	CHAR(20),
+	Add1	VARCHAR(60),
+	Add2	VARCHAR(60),
+	City	VARCHAR(30),
+	ZipCde	CHAR(5),
+	Stte	VARCHAR(30),
+	Ctry	VARCHAR(30),
+	Tel	VARCHAR(15),
+	Fax	VARCHAR(15),
+	Remark	VARCHAR(200),
+	PRIMARY KEY(Cmp, QttNo));
+
+DROP TABLE BSQTTC IF EXISTS;
+
+CREATE CACHED TABLE BSQTTC(
+	Cmp	CHAR(10),
+	QttNo	CHAR(20),
+	FstNme	VARCHAR(30),
+	LstNme	VARCHAR(30),
+	Title	VARCHAR(30),
+	Tel	VARCHAR(15),
+	Fax	VARCHAR(15),
+	Mobile	VARCHAR(15),
+	Email	VARCHAR(50),
+	Remark	VARCHAR(200),
+	PRIMARY KEY(Cmp, QttNo));
+	
+DROP TABLE BSQTTJ IF EXISTS;
+
+CREATE CACHED TABLE BSQTTJ(
+	Cmp	CHAR(10),
+	QttNo	CHAR(20),
+	Seq	INT,
+	Adj	CHAR(10),
+	Nme	CHAR(30),
+	Typ	CHAR(1),
+	Prio	INT,
+	Amt	DECIMAL,
+	EffAmt	DECIMAL,
+	OpenAmt	DECIMAL,
+	NewAmt	DECIMAL,
+	PRIMARY KEY(Cmp, QttNo, Seq));
+
+DROP TABLE BSQTTR IF EXISTS;
+
+CREATE CACHED TABLE BSQTTR(
+	Cmp	CHAR(10),
+	QttNo	CHAR(20),
+	Seq	INT,
+	Text	CHAR(80),
+	PRIMARY KEY(Cmp, QttNo, Seq));

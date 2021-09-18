@@ -1,0 +1,34 @@
+<!--
+Copyright 2007 GQR Solutions. All rights reserved.
+PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<HTML>
+    <BODY>
+        <H3>DB.title</H3>
+        <UL><LI>l.DB.version: v.DB.version</LI></UL>
+        
+        <H4>DB.USR.title</H4>
+        <TABLE>
+            <TR><TD align="RIGHT">l.DB.USR</TD><TD align="RIGHT">v.DB.USR</TD></TR>
+            <TR><TD align="RIGHT">l.DB.USRH</TD><TD align="RIGHT">v.DB.USRH</TD></TR>
+            <TR><TD align="RIGHT">l.DB.CFG</TD><TD align="RIGHT">v.DB.CFG</TD></TR>
+            <TR><TD align="RIGHT">l.DB.ACT</TD><TD align="RIGHT">v.DB.ACT</TD></TR>
+            <TR><TD align="RIGHT">l.DB.DB</TD><TD align="RIGHT">v.DB.DB</TD></TR>
+        </TABLE>
+        <H4>DB.USRTXN.title</H4>
+        <TABLE>
+            <TR><TD align="RIGHT">l.DB.USR</TD><TD align="RIGHT">v.DB.USR</TD></TR>
+        </TABLE>
+ACC
+TXN
+
+
+•	For each PFUSR
+o	Select Count(*) from PFACC, PFTXN, PFTXNE, PFACCM, PFACCY
+o	Select Count(*) from PFACCH, PFTXNH
+
+        <CENTER>
+            <A HREF="close">DB.close</A>
+        </CENTER>
+    </BODY>
+</HTML>

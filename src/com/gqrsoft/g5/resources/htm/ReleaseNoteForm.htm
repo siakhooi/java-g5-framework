@@ -1,0 +1,294 @@
+<HTML>
+    <BODY>
+        <H2>Release Note</H2>
+        <UL>
+            <LI>1.0.1.3: Sep 10, 2008</LI>
+            <LI>1.0.1.2: Aug 28, 2008</LI>
+            <LI>1.0.1.1: Aug 6, 2008</LI>
+            <LI>1.0.1.0: May 31, 2008</LI>
+            <LI>1.0.0.3: Apr 24, 2008</LI>
+            <LI>1.0.0.2: Apr 15, 2008</LI>
+            <LI>1.0.0.1: Apr 4, 2008</LI>
+            <LI>1.0.0.0: Mar 17, 2008</LI>
+        </UL>
+
+        <P><U><A NAME="1013">1.0.1.3</A>: Sep 10, 2008</U><TABLE BORDER="0">
+                <TR>
+                    <TH VALIGN="TOP">Form
+                    <TH VALIGN="TOP">Description
+                    <TH VALIGN="TOP">API
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.rockey
+                    <TD VALIGN="TOP">change to 4nd version
+                    <TD VALIGN="TOP">
+                </TR>
+        </TABLE></P>        
+        
+        <P><U><A NAME="1010">1.0.1.1</A>: Aug 6, 2008</U><TABLE BORDER="0">
+                <TR>
+                    <TH VALIGN="TOP">Form
+                    <TH VALIGN="TOP">Description
+                    <TH VALIGN="TOP">API
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">TextForm
+                    <TD VALIGN="TOP">new Form.
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ListForm
+                    <TD VALIGN="TOP">setActionEnable, add RecordCheckOn[Edit|Copy|View]
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ImageForm
+                    <TD VALIGN="TOP">add setImage(img)
+                    <TD VALIGN="TOP">
+                </TR>
+        </TABLE></P>        
+        
+        <P><U><A NAME="1010">1.0.1.0</A>: May 31, 2008</U><TABLE BORDER="0">
+                <TR>
+                    <TH VALIGN="TOP">Form
+                    <TH VALIGN="TOP">Description
+                    <TH VALIGN="TOP">API
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ReportExecutionForm
+                    <TD VALIGN="TOP">add currentLocale to JasperViewer.
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Language
+                    <TD VALIGN="TOP">add additionalSystemBaseName<BR>add Application overridable SystemBaseName
+                    <TD VALIGN="TOP">cmd.lang.addSystemBaseName(String baseName);
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">TabForm
+                    <TD VALIGN="TOP">new Form
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">SelectionForm
+                    <TD VALIGN="TOP">new Form
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ButtonBuilder
+                    <TD VALIGN="TOP">move the label of button to bottom
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.entry.* (EntryForm)
+                    <TD VALIGN="TOP">add Tab functions
+                    <TD VALIGN="TOP">setTabLayout(TabFormEnum.TabLayoutPolicy)<BR>setTabIcon(String tabName, Icon icon)<BR>setTabTooltips(String tabName, String tooltips)<BR>setTabBackgroundAt(String tabName, Color background)<BR>setTabForegroundAt(String tabName, Color foreground)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">EntryForm
+                    <TD VALIGN="TOP">Embed Form into Data Tab
+                    <TD VALIGN="TOP">addTab(title, description, Class<? extends UserFormInterface>)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.web.* (Web Access)
+                    <TD VALIGN="TOP">convert WebForm to cmd.web.*
+                    <TD VALIGN="TOP">cmd.web.*
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ListForm
+                    <TD VALIGN="TOP">bug: wrong format when drag column<BR>add doubleclick action<BR>remember last selection on exit/return<BR>allow hide buttons
+                    <TD VALIGN="TOP"><BR>ListFormEnum.ListActionType getDoubleClickAction()<BR>Component formatCell(Component cellComp, int row, int column)<BR>boolean showButtons()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Log
+                    <TD VALIGN="TOP">bug: overwriting each time instead of appending
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">SystemTrayMenuForm
+                    <TD VALIGN="TOP">new form
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Toolkit command line
+                    <TD VALIGN="TOP">
+                    <TD VALIGN="TOP">-hsql xxx
+                </TR>
+        </TABLE></P>        
+        
+        <P><U><A NAME="1003">1.0.0.3</A>: Apr 24, 2008</U><TABLE BORDER="0">
+                <TR>
+                    <TH VALIGN="TOP">Form
+                    <TH VALIGN="TOP">Description
+                    <TH VALIGN="TOP">API
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Language
+                    <TD VALIGN="TOP">On not found, log to logger at FINEST level, instead of stderr.
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">EntryForm
+                    <TD VALIGN="TOP">bug: verify(**) not correct for RadioBox field.
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.db.*
+                    <TD VALIGN="TOP">Not calling rs.next() automatically.
+                    <TD VALIGN="TOP">execQuery()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ImageForm
+                    <TD VALIGN="TOP">allow to show/hide buttons<BR>Option for ScrollPane<BR>Background Color
+                    <TD VALIGN="TOP">boolean showButtons()<BR>boolean useScrollPane()<BR>Color getBackgroundColor()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">EntryForm
+                    <TD VALIGN="TOP">add I18n Support for options, tab
+                    <TD VALIGN="TOP">addI18nOption(**), addOption(**), addI18nTab(**), addTab(**)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ListForm
+                    <TD VALIGN="TOP">allow to customize SELECT button<BR>change to ToolBar
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">MenuForm
+                    <TD VALIGN="TOP">new API
+                    <TD VALIGN="TOP">beforeFormExecute()<BR>afterFormExecute()
+                </TR>
+        </TABLE></P>        
+        
+        <P><U><A NAME="1002">1.0.0.2</A>: Apr 15, 2008</U><TABLE BORDER="0">
+                <TR>
+                    <TH VALIGN="TOP">Form
+                    <TH VALIGN="TOP">Description
+                    <TH VALIGN="TOP">API
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">AboutSystemPropertiesForm
+                    <TD VALIGN="TOP">bug: title not in lang file.
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Frame
+                    <TD VALIGN="TOP">bug: eventAfterVisible not work for dialog (modal type)<BR>added eventBeforeVisible
+                    <TD VALIGN="TOP">void eventBeforeVisible()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ButtonForm/ImageForm
+                    <TD VALIGN="TOP">bug: setDefaultButton not work for embedded Form.<BR>allow to set Button invisible<BR>addButton(**), lang support version for addI18nButton(**)
+                    <TD VALIGN="TOP">boolean showButton()<BR>addButton(**)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">MenuForm
+                    <TD VALIGN="TOP">add Separator support for JMenuBar, ignore by TreeView
+                    <TD VALIGN="TOP">addSeparator()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ReportExecutionForm
+                    <TD VALIGN="TOP">remove support for JasperReport XML file<BR>remove support for ReportDesign<BR>remove support for Report Template Control<BR>add putResourceBundle(**) to use custom lang file.<BR>implement default File getPdfFile(), call a FileDialog
+                    <TD VALIGN="TOP">addResourceBundle(String)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ListForm
+                    <TD VALIGN="TOP">Add auto exception handling for 8 buttons (except Close & Reload)<BR>add cmd.list.getTableModel()
+                    <TD VALIGN="TOP">execute*(**) throws Exception<BR>cmd.list.getTableModel()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ModeEntryForm
+                    <TD VALIGN="TOP">allow customize buttons for each mode.
+                    <TD VALIGN="TOP">
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Languages
+                    <TD VALIGN="TOP">additional Resource Bundles support.
+                    <TD VALIGN="TOP">cmd.lang.addBaseName(basename)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.icon.*
+                    <TD VALIGN="TOP">allow user to access built-in ImageIcon.
+                    <TD VALIGN="TOP">cmd.icon.*
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.log
+                    <TD VALIGN="TOP">added warning(**) and info(**) function
+                    <TD VALIGN="TOP">cmd.log.warning(**)<BR>cmd.log.info(**)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Form Parameter
+                    <TD VALIGN="TOP">change local type to FormParameters<BR>add data types
+                    <TD VALIGN="TOP">TableModel tableModel<BR>Object objectValue<BR>Object[] objectValues<BR>Object[][] object2DValues
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">Global Parameter
+                    <TD VALIGN="TOP">add data types
+                    <TD VALIGN="TOP">String[], int[], Object[]
+                </TR>
+        </TABLE></P>        
+        
+        <P><U><A NAME="1001">1.0.0.1</A>: Apr 4, 2008</U><TABLE BORDER="0">
+                <TR>
+                    <TH VALIGN="TOP">Form
+                    <TH VALIGN="TOP">Description
+                    <TH VALIGN="TOP">API
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">AboutApplicationForm
+                    <TD VALIGN="TOP">Show Application Information
+                    <TD VALIGN="TOP">void cmd.appinfo.showAboutApplication()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ReleaseNoteForm
+                    <TD VALIGN="TOP">Show engine Release Note
+                    <TD VALIGN="TOP">void cmd.appinfo.showReleaseNote()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">AboutSystemPropertiesForm
+                    <TD VALIGN="TOP">show System Properties value
+                    <TD VALIGN="TOP">void cmd.appinfo.showSystemProperties()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">EntryForm
+                    <TD VALIGN="TOP">to explicitly verify fieldName
+                    <TD VALIGN="TOP">void cmd.entry.verify(String fieldName)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ImageForm
+                    <TD VALIGN="TOP">allow click on Image
+                    <TD VALIGN="TOP">void userAction()<BR>boolean hasAction()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">ListForm
+                    <TD VALIGN="TOP">Manipulate selection
+                    <TD VALIGN="TOP">void cmd.list.selectRow(int n)<BR>void cmd.list.selectFirstRow()<BR>void cmd.list.selectLastRow()<BR>void cmd.list.clearSelection()<BR>void cmd.list.getRowCount()<BR>void cmd.list.addRowSelection(int r1, int r2)
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">StyledTextForm
+                    <TD VALIGN="TOP">Option for ScrollPane
+                    <TD VALIGN="TOP">boolean useScrollPane()
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.LineWriter
+                    <TD VALIGN="TOP">rename from cmd.line.* to cmd.linewrite.*
+                    <TD VALIGN="TOP">cmd.linewrite.*
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.LineReader
+                    <TD VALIGN="TOP">read line by line
+                    <TD VALIGN="TOP">cmd.lineread.*
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP">cmd.Reader and Writer
+                    <TD VALIGN="TOP">Rockey software control
+                    <TD VALIGN="TOP">cmd.rockey.*
+                </TR>
+        </TABLE></P>
+        <P><U><A NAME="1000">1.0.0.0</A>: Mar 17, 2008</U><UL>
+                <LI>Initial Release.</LI>
+        </UL></P>
+        <CENTER>
+            <H2><A HREF='close'>Close</A></H2>
+        </CENTER>
+    </BODY>
+</HTML>

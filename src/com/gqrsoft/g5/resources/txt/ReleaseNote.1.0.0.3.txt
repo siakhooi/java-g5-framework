@@ -1,0 +1,20 @@
+Release Version: 1.0.0.3
+Release Date: 24 Apr 2008
+Description: 
+
+* enhance: I18n: On not found error, log to logger at FINEST level, instead of stderr.
+* bug: EntryForm: verify(**) not correct for RadioBox field.
+* enhance: cmd.db: execQuery(), change to NOT calling rs.next() automatically.
+* enhance: ImageForm: allow to show/hide buttons: add boolean showButtons();
+* enhance: ImageForm: Option for ScrollPane: add boolean useScrollPane()
+* enhance: ImageForm: Background Color: add Color getBackgroundColor()
+* enhance: EntryForm: add I18n Support for options, tab
+                      addI18nOption(**)
+                      addOption(**)
+                      addI18nTab(**)
+                      addTab(**)
+* enhance: ListForm: allow to customize SELECT button
+                     change to ToolBar (instead of button panel)
+* enhance: MenuForm: add beforeFormExecute()
+                     add afterFormExecute()
+        

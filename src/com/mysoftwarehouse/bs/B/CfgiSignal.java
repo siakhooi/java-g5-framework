@@ -1,0 +1,16 @@
+/*
+ * Copyright 2007 GQR Solutions. All rights reserved.
+ * PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+
+package com.mysoftwarehouse.bs.B;
+
+import com.mysoftwarehouse.bs.HJ.H.*;
+
+/**
+ *
+ * @author Ng Siak Hooi
+ */
+public class CfgiSignal {
+    public static int REFRESH=100;
+}

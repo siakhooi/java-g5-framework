@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="BSJX0RCP_HT"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="BSJX0RCP.HasRCPJ" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BSJX0RCP.HasRCPR" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BSJX0RCP.DS.RCPR" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSJX0RCP.DS.RCPJ" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSJX0RCP.SR.RCPR" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="BSJX0RCP.SR.RCPJ" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="BSJX0RCP.DS.RCP" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSJX0RCP.SR.RCP" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="SHOW_DEMO" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CMP.CurCde" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CMPS.Sign1" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="CMPS.Sign2" isForPrompting="false" class="java.lang.String"/>
+	<queryString><![CDATA[select * FROM BSRCP]]></queryString>
+
+	<field name="Add1" class="java.lang.String"/>
+	<field name="Add2" class="java.lang.String"/>
+	<field name="City" class="java.lang.String"/>
+	<field name="ZipCde" class="java.lang.String"/>
+	<field name="Stte" class="java.lang.String"/>
+	<field name="Ctry" class="java.lang.String"/>
+	<field name="Tel" class="java.lang.String"/>
+	<field name="Fax" class="java.lang.String"/>
+	<field name="Nme" class="java.lang.String"/>
+	<field name="Email" class="java.lang.String"/>
+	<field name="WebSte" class="java.lang.String"/>
+	<field name="RegNo" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="108"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="268"
+						y="-269"
+						width="267"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-42"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Courier New" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="CP1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.TotalPageNumber.Prefix} +" "+ $V{PAGE_NUMBER} + " " +$R{Report.TotalPageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="268"
+						y="-269"
+						width="267"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-43"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Courier New" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="CP1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.TotalPageNumber.Prefix} +" "+ $V{PAGE_NUMBER} + " " +$R{Report.TotalPageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="-269"
+						width="268"
+						height="19"
+						key="textField-44"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Right">
+						<font fontName="Courier New" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.PageNumber.Prefix}+" " + $V{PAGE_NUMBER} +" "+ $R{Report.PageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="268"
+						y="-269"
+						width="267"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-46"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Courier New" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="CP1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.TotalPageNumber.Prefix} +" "+ $V{PAGE_NUMBER} + " " +$R{Report.TotalPageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="-269"
+						width="268"
+						height="19"
+						key="textField-47"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Right">
+						<font fontName="Courier New" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.PageNumber.Prefix}+" " + $V{PAGE_NUMBER} +" "+ $R{Report.PageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="30"
+						key="textField-48"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="18" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Nme}+" ("+$F{RegNo}+")"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="30"
+						width="535"
+						height="13"
+						key="textField-49"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Add1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="43"
+						width="535"
+						height="13"
+						key="textField-50"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Add2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="56"
+						width="535"
+						height="13"
+						key="textField-51"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{City}+", "+$F{Stte}+", "+$F{ZipCde}+", "+$F{Ctry}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="69"
+						width="535"
+						height="13"
+						key="textField-52"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{BSJX0RCP.H.Tel}+$F{Tel}+" "+$R{BSJX0RCP.H.Fax}+$F{Fax}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="82"
+						width="535"
+						height="13"
+						key="textField-53"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{BSJX0RCP.H.Email}+$F{Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="95"
+						width="535"
+						height="13"
+						key="textField-54"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{BSJX0RCP.H.WebSte}+$F{WebSte}]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="20"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="20"
+						key="subreport-1"/>
+					<subreportParameter  name="BSJX0RCP.HasRCPJ">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.HasRCPJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.HasRCPR">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.HasRCPR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.DS.RCPR">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.DS.RCPR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.DS.RCPJ">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.DS.RCPJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.SR.RCPR">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.SR.RCPR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.SR.RCPJ">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.SR.RCPJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SHOW_DEMO">
+						<subreportParameterExpression><![CDATA[$P{SHOW_DEMO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CMP.CurCde">
+						<subreportParameterExpression><![CDATA[$P{CMP.CurCde}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CMPS.Sign1">
+						<subreportParameterExpression><![CDATA[$P{CMPS.Sign1}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CMPS.Sign2">
+						<subreportParameterExpression><![CDATA[$P{CMPS.Sign2}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="REPORT_RESOURCE_BUNDLE">
+						<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{BSJX0RCP.DS.RCP}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{BSJX0RCP.SR.RCP}]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

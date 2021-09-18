@@ -1,0 +1,76 @@
+Release Version: 1.0.2.0
+Release Date: 5 Nov 2008
+Description: Various changes.
+
+* deprecate: ReleaseNoteForm
+* new: ReleaseNoteMenuForm, ReleaseNoteTextForm - replace ReleaseNoteForm
+* cmd.lang
+  * bug: AboutApplicationForm.close=Tutup (wrongly put as Tentang)
+  * new: zh_TW
+* cmd.argv
+  * bug: -hsql: open custom JDBC url on system administration
+  * enhance: -R, -resource: default base name to use for language.
+* cmd.form
+  * deprecate: broadcastSignal(int signalNumber) - confusing API
+  * deprecate: broadcastSignal(int signalNumber, boolean block) - confusing API
+  * new: broadcastBlockingSignal(int signalNumber);
+  * new: broadcastThreadedSignal(final int signalNumber);
+  * new: receiveSystemSignal(int signalNumber, String signalCode): for system enhancement purposes.
+  * new: broadcastSystemSignal(int signalNumber, String signalCode);
+  * new: closeAllButMe();
+  * new: setLastWindowsCheck(boolean checkLastWindows): use for systray
+  * new: JPopupMenu cmd.form.createPopupMenu(MenuForm);
+  * new: attachPopupMenu(JComponent, MenuForm);
+* cmd.str (new)
+  * new: String cmd.str.ltrim(String source);
+  * new: String cmd.str.rtrim(String source);
+  * new: String cmd.str.itrim(String source);
+  * new: String cmd.str.remove0D0A(String source);
+* cmd.cal
+  * new: Calendar cmd.cal.getDateOnly(Calendar);
+  * new: Calendar cmd.cal.copy(Calendar);
+* cmd.data
+  * new: Sting cmd.data.inputStream2String(InputStream);
+* MenuForm
+  * enhance: default implement of
+             public String getFormTitle() {}
+             public void onEscapeKeyPressed() {}
+* ImageForm
+  * deprecate: ImageForm
+  * new: ImageForm2 - replace ImageForm
+* ButtonForm
+  * deprecate: ButtonForm
+  * new: ButtonForm2
+  * new: ActionForm_Close extends ButtonForm2 - default implementation for a Close button
+  * new: ActionForm_OKCancel extends ButtonForm2 - default implementation for OK and Cancel button
+* TextForm
+  * deprecate: TextForm
+  * new: TextForm2 extends BlankForm
+  * enhance: add PopupMenu
+* TabForm
+  * enhance: change TabForm extends ButtonForm to extends BlankForm
+* SelectionForm
+  * enhance: add Select All/Select None to Multi Select mode
+* EntryForm
+  * bug: Tab - language translated and ask to translate again.
+  * bug: RadioBox/CheckBox: background/opaque=false
+  * enhance: on verify error, change field background color to Color.RED
+  * enhance: change verify result return mechanism to VerifyResult class.
+     * deprecate: public boolean verify(String fieldName);
+                  protected void setI18nVerifyErrorMessage(String i18nErrorMessage);
+                  protected void setVerifyErrorMessage(String errorMessage);
+                  protected void setVerifyErrorMessage(String errorMessage, String... values);
+     * new: public void verifyField(String fieldName) throws Exception;
+            protected void throwI18nVerifyError(String i18nErrorMessage) throws Exception;
+            protected void throwVerifyError(String errorMessage) throws Exception;
+            protected void throwVerifyError(String errorMessage, String... values) throws Exception;
+* ModeEntryForm
+  * bug: EscapeKey/Windows Close button - not function
+* ListForm
+  * enhance: catch all execute*() Exception, show default msg
+  * enhance: add deleteForm, RecordCheckOnDelete
+  * bug: setFieldVisible not working
+  * bug: restoreSelection doesn't restore vertical scrollbar position.
+* enhance: Menu/Toolbar/Button/PopupMenu/SystemTrayMenu
+           setIcon(icon) - except SystemTrayMenu
+           setEnabled()

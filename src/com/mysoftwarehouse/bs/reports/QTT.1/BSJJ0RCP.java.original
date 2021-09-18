@@ -1,0 +1,116 @@
+/*
+ * Copyright 2007 GQR Solutions. All rights reserved.
+ * PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+package com.mysoftwarehouse.bs.HJ.J;
+
+import com.gqrsoft.g5.developer.form.ReportExecutionForm;
+import com.gqrsoft.g5.developer.publicobject.ReportExecutionException;
+import com.mysoftwarehouse.bs.conf.DONGLE;
+import com.mysoftwarehouse.bs.conf.MAP;
+import com.mysoftwarehouse.bs.conf.REPORT;
+import com.mysoftwarehouse.bs.data.GET;
+import com.mysoftwarehouse.bs.data.RcpEnum;
+import com.mysoftwarehouse.bs.db.CFG.CFGI;
+import com.mysoftwarehouse.bs.db.RCP.RCP_JJ0RCP;
+import java.io.InputStream;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author Ng Siak Hooi
+ */
+public class BSJJ0RCP extends ReportExecutionForm {
+
+    @Override
+    protected void initReport() throws ReportExecutionException {
+        String r = REPORT.REPORT_PATH + "BSJX0RCP.jasper";
+        InputStream in = BSJJ0RCP.class.getResourceAsStream(r);
+        super.loadCompiledReport(in);
+    }
+    String RcpNo = "";
+    String rsNameRcpj = "BSJJ0RCP.rsRcpj";
+    boolean hasRcpj = false;
+    String rsNameRcpr = "BSJJ0RCP.rsRcpr";
+    boolean hasRcpr = false;
+    String rsNameCmp = "BSJJ0RCP.rsCmp";
+
+    @Override
+    protected void prepareExecution() throws ReportExecutionException {
+        try {
+            String rsName = "BSJJ0RCP";
+            RcpNo = cmd.in.map.texts.get(MAP.BSRCP.FROM);
+            String Cmp = GET.Cmp(this);
+            RCP_JJ0RCP.select(this, rsName, Cmp, RcpNo);
+            super.useResultSetDataSource(rsName);
+            RCP_JJ0RCP.selectRcpj(this, rsNameRcpj, Cmp, RcpNo);
+            if (cmd.db.next(rsNameRcpj)) {
+                hasRcpj = true;
+                cmd.db.beforeFirst(rsNameRcpj);
+            }
+            RCP_JJ0RCP.selectRcpr(this, rsNameRcpr, Cmp, RcpNo);
+            if (cmd.db.next(rsNameRcpr)) {
+                hasRcpr = true;
+                cmd.db.beforeFirst(rsNameRcpr);
+            }
+            RCP_JJ0RCP.selectCmp(this, rsNameCmp, Cmp);
+        } catch (SQLException ex) {
+            cmd.log.severe("BSJJ0RCP.error", ex);
+        }
+    }
+
+    @Override
+    protected void initExecution() throws ReportExecutionException {
+        String Cmp = GET.Cmp(this);
+        super.putParameter(REPORT.USER_ID, Cmp);
+
+        String printDte = cmd.cal.getISO8601FormattedNow();
+        super.putParameter(REPORT.PRINT_DATE, printDte);
+
+        super.putResourceBundle(REPORT.RESOURCEBUNDLENAME);
+
+        String fmt = cmd.in.map.texts.get(MAP.BSCFG.RCPFORMAT);
+        switch (RcpEnum.Format.get(fmt)) {
+            case B:
+                InputStream rcp_hb = BSJJ0RCP.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSJX0RCP_HB.jasper");
+                super.putCompiledSubreport("BSJX0RCP.SR.RCP_H", rcp_hb);
+                super.putDataSource("BSJX0RCP.DS.RCP_H", cmd.db.getResultSet(rsNameCmp));
+                break;
+            case T:
+                InputStream rcp_ht = BSJJ0RCP.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSJX0RCP_HT.jasper");
+                super.putCompiledSubreport("BSJX0RCP.SR.RCP_H", rcp_ht);
+                super.putDataSource("BSJX0RCP.DS.RCP_H", cmd.db.getResultSet(rsNameCmp));
+                break;
+            case I:
+                InputStream rcp_hi = BSJJ0RCP.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSJX0RCP_HI.jasper");
+                super.putCompiledSubreport("BSJX0RCP.SR.RCP_H", rcp_hi);
+                super.putDataSource("BSJX0RCP.DS.RCP_H", cmd.db.getResultSet(rsNameCmp));
+
+                super.putParameter("BSJX0RCP.IMG.HEAD", CFGI.getLetterHead(this, Cmp));
+                break;
+        }
+
+        InputStream rcpj = BSJJ0RCP.class.getResourceAsStream(
+                REPORT.REPORT_PATH + "BSJX0RCP_J.jasper");
+        super.putCompiledSubreport("BSJX0RCP.SR.RCPJ", rcpj);
+        super.putDataSource("BSJX0RCP.DS.RCPJ", cmd.db.getResultSet(rsNameRcpj));
+        super.putParameter("BSJX0RCP.HasRCPJ", new Boolean(hasRcpj));
+
+        InputStream rcpr = BSJJ0RCP.class.getResourceAsStream(
+                REPORT.REPORT_PATH + "BSJX0RCP_R.jasper");
+        super.putCompiledSubreport("BSJX0RCP.SR.RCPR", rcpr);
+        super.putDataSource("BSJX0RCP.DS.RCPR", cmd.db.getResultSet(rsNameRcpr));
+        super.putParameter("BSJX0RCP.HasRCPR", new Boolean(hasRcpr));
+
+        super.putParameter(REPORT.SHOW_DEMO, new Boolean(DONGLE.isDemoMode(this)));
+        super.putParameter(REPORT.CURCDE, GET.CurCde(this));
+    }
+
+    @Override
+    public String getFormTitle() {
+        return "BSJJ0RCP.title";
+    }
+}

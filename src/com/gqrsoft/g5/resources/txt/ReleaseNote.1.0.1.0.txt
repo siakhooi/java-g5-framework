@@ -1,0 +1,33 @@
+Release Version: 1.0.1.0
+Release Date: 31 May 2008
+Description: 
+
+* enhance: ReportExecutionForm: add currentLocale to JasperViewer.
+* enhance: I18N:
+           add additionalSystemBaseName
+           add Application overridable SystemBaseName
+           add cmd.lang.addSystemBaseName(String baseName);
+* enhance: TabForm: new form
+* enhance: SelectionForm: new form
+* enhance: ButtonBuilder: move the label of button to bottom
+* enhance: EntryForm/cmd.entry: add Tab functions
+           setTabLayout(TabFormEnum.TabLayoutPolicy)
+           setTabIcon(String tabName, Icon icon)
+           setTabTooltips(String tabName, String tooltips)
+           setTabBackgroundAt(String tabName, Color background)
+           setTabForegroundAt(String tabName, Color foreground)
+* enhance: EntryForm: Embed Form into Data Tab
+           add addTab(title, description, Class<? extends UserFormInterface>);
+* enhance: cmd.web: new cmd, convert WebForm to cmd.web.*
+                    deprecate WebForm
+* bug: ListForm: wrong format when drag column
+* enhance: ListForm: add doubleclick action
+                     add ListFormEnum.ListActionType getDoubleClickAction();
+* enhance: ListForm: remember last selection on exit/return
+* enhance: ListForm: allow hide buttons
+                     add boolean showButtons()
+* enhance: ListForm: allow format each cell
+                     add Component formatCell(Component cellComp, int row, int column)
+* bug: cmd.log: overwriting each time instead of appending, now appending
+* enhance: SystemTrayMenuForm: new form
+* enhance: -hsql xxx: Toolkit command line
