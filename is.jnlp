@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp codebase="http://siakhooi.github.io/java-g5-framework/" href="is.jnlp">
+  <information>
+    <title>Inventory Suite</title>
+    <vendor>GQR Solutions</vendor>
+    <homepage href="http://siakhooi.github.io/java-g5-framework" />
+    <description>Inventory Suite</description>
+    <icon href="is.png" />
+    <shortcut online="true">
+      <desktop />
+    </shortcut>
+    <offline-allowed />
+  </information>
+  <security>
+    <all-permissions />
+  </security>
+  <resources>
+    <j2se version="1.6+" />
+    <jar href="lib/G5.1.1.0.0.jar" />
+    <jar href="lib/barbecue-1.1.jar" />
+    <jar href="lib/commons-beanutils-1.7.jar" />
+    <jar href="lib/commons-cli-1.1.jar" />
+    <jar href="lib/commons-codec-1.3.jar" />
+    <jar href="lib/commons-collections-3.2.jar" />
+    <jar href="lib/commons-configuration-1.4.jar" />
+    <jar href="lib/commons-dbcp-1.2.2.jar" />
+    <jar href="lib/commons-digester-1.7.jar" />
+    <jar href="lib/commons-javaflow-20060411.jar" />
+    <jar href="lib/commons-lang-2.3.jar" />
+    <jar href="lib/commons-logging-1.1.jar" />
+    <jar href="lib/commons-pool-1.3.jar" />
+    <jar href="lib/groovy-all-1.0.jar" />
+    <jar href="lib/hsqldb-1.8.0.10.jar" />
+    <jar href="lib/itext-1.3.1.jar" />
+    <jar href="lib/jasperreports-2.0.5.jar" />
+    <jar href="lib/jcalendar-1.3.0.jar" />
+    <jar href="lib/jcommon-1.0.0.jar" />
+    <jar href="lib/jdt-compiler-3.1.1.jar" />
+    <jar href="lib/jfreechart-1.0.0.jar" />
+    <jar href="lib/opencsv-2.2.jar" />
+    <jar href="lib/poi-3.0.1-FINAL-20070705.jar" />
+    <jar href="lib/rockey4nd.jar" />
+    <jar href="lib/rockey4ndlib.jar" />
+  </resources>
+  <application-desc main-class="com.mysoftwarehouse.dist.is.Main" />
+</jnlp>
