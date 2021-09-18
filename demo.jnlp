@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp codebase="http://siakhooi.github.io/java-g5-framework/" href="demotoolkit.jnlp">
+<jnlp codebase="https://siakhooi.github.io/java-g5-framework/" href="demo.jnlp">
   <information>
     <title>Demo Toolkit</title>
     <vendor>GQR Solutions</vendor>
-    <homepage href="http://siakhooi.github.io/java-g5-framework" />
+    <homepage href="https://siakhooi.github.io/java-g5-framework" />
     <description>Demo Toolkit</description>
     <icon href="demo.png" />
     <shortcut online="true">
