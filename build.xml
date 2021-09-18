@@ -1,0 +1,56 @@
+<project name="G5" default="app" basedir=".">
+  <description>G5 build file</description>
+  <property name="src" location="src" />
+  <property name="build" location="ant.build" />
+  <property name="dist" location="ant.dist" />
+  <property name="log" value="ant.build.log" />
+
+  <property name="target.jar" value="G5.1.1.0.0.jar" />
+
+  <path id="build.classpath">
+    <fileset dir="lib.unsigned">
+      <include name="**/*.jar" />
+      <include name="**/*.zip" />
+    </fileset>
+  </path>
+
+  <target name="init">
+    <tstamp>
+      <format property="build_timestamp" pattern="yyyyMMddHHmmss.SSSZ" />
+    </tstamp>
+    <mkdir dir="${build}" />
+    <mkdir dir="${dist}" />
+  </target>
+
+  <target name="app" depends="init">
+    <record name="${log}" action="start" append="false" />
+    <javac srcdir="${src}" destdir="${build}" verbose="yes" includeantruntime="false" source="1.7" target="1.7">
+      <classpath refid="build.classpath" />
+    </javac>
+    <jar jarfile="${dist}/${target.jar}">
+      <fileset dir="${build}" />
+      <fileset dir="${src}" excludes="**/*.java" />
+    </jar>
+    <record name="${log}" action="stop" />
+  </target>
+
+  <target name="g5doc">
+    <javadoc destdir="docs/api" author="true" version="true" use="true" useexternalfile="yes" windowtitle="G5 API">
+      <classpath refid="build.classpath" />
+      <fileset dir="${src}" defaultexcludes="yes">
+        <include name="com/gqrsoft/g5/**/*.java" />
+      </fileset>
+      <doctitle>
+        <![CDATA[<h1>G5 API</h1>]]>
+      </doctitle>
+      <bottom>
+        <![CDATA[<i>Copyright © 2000 GQR Solutions. All Rights Reserved.</i>]]>
+      </bottom>
+      <group title="Developer Packages" packages="com.gqrsoft.g5.developer.*" />
+      <tag name="todo" scope="all" description="To do:" />
+      <!--      <link offline="true" href="https://docs.oracle.com/javase/8/docs/api/" packagelistLoc="C:\tmp"/>
+      <link href="https://docs.oracle.com/javase/8/docs/api/"/> -->
+    </javadoc>
+  </target>
+
+</project>

@@ -1,0 +1,8 @@
+Release Version: 1.0.1.1
+Release Date: 6 Aug 2008
+Description: 
+
+* enhance: add TextForm
+* enhance: ImageForm: add setImage(img)
+* enhance: ListForm: add setActionEnable()
+                     add RecordCheckOn[Edit|Copy|View]

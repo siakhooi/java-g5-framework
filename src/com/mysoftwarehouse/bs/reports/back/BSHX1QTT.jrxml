@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="BSHX0QTT"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="Report.PrintDate" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="Report.PrintBy" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="Report.Title" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="Report.Subtitle" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpNme" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpRegNo" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpAddr1" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpAddr2" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpCity" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpState" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpZipCde" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpCtry" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpEmail" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpWebSite" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpPhone" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.CmpFax" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BSHX0QTT.HasQTTJ" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BSHX0QTT.SR.QTTJ" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="BSHX0QTT.DS.QTTJ" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSHX0QTT.DS.QTTR" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSHX0QTT.HasQTTR" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BSHX0QTT.SR.QTTR" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="BSHX0QTT.SR.QTT0" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<queryString><![CDATA[select * FROM BSQTT]]></queryString>
+
+	<field name="QttNo" class="java.lang.String"/>
+	<field name="Cus" class="java.lang.String"/>
+	<field name="QttDte" class="java.sql.Timestamp"/>
+	<field name="ExpDte" class="java.sql.Timestamp"/>
+	<field name="TtlGrsAmt" class="java.math.BigDecimal"/>
+	<field name="Itm" class="java.lang.String"/>
+	<field name="ItmNme" class="java.lang.String"/>
+	<field name="Price" class="java.math.BigDecimal"/>
+	<field name="Qty" class="java.math.BigDecimal"/>
+	<field name="ItmTtlAmt" class="java.math.BigDecimal"/>
+	<field name="NetTtlAmt" class="java.math.BigDecimal"/>
+	<field name="CusNme" class="java.lang.String"/>
+	<field name="Add1" class="java.lang.String"/>
+	<field name="Add2" class="java.lang.String"/>
+	<field name="City" class="java.lang.String"/>
+	<field name="ZipCde" class="java.lang.String"/>
+	<field name="Stte" class="java.lang.String"/>
+	<field name="Ctry" class="java.lang.String"/>
+	<field name="Tel" class="java.lang.String"/>
+	<field name="Fax" class="java.lang.String"/>
+	<field name="FstNme" class="java.lang.String"/>
+	<field name="LstNme" class="java.lang.String"/>
+	<field name="ItmText" class="java.lang.String"/>
+	<field name="Title" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="113"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="370"
+						height="30"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="18" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{BSHX0QTT.CmpNme}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="30"
+						width="370"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{BSHX0QTT.CmpAddr1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="43"
+						width="370"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{BSHX0QTT.CmpAddr2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="56"
+						width="370"
+						height="13"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{BSHX0QTT.CmpCity}+", "+$P{BSHX0QTT.CmpState}+", "+$P{BSHX0QTT.CmpZipCde}+", "+$P{BSHX0QTT.CmpCtry}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="69"
+						width="370"
+						height="13"
+						key="textField-2"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{BSHX0QTT.CmpPhone}+$P{BSHX0QTT.CmpPhone}+$R{BSHX0QTT.CmpFax}+$P{BSHX0QTT.CmpFax}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="82"
+						width="370"
+						height="13"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{BSHX0QTT.CmpEmail}+$P{BSHX0QTT.CmpEmail}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="95"
+						width="370"
+						height="13"
+						key="textField-4"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{BSHX0QTT.CmpWebSite}+$P{BSHX0QTT.CmpWebSite}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="110"
+						width="535"
+						height="0"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="268"
+						y="-269"
+						width="267"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-42"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Courier New" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="CP1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.TotalPageNumber.Prefix} +" "+ $V{PAGE_NUMBER} + " " +$R{Report.TotalPageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="268"
+						y="-269"
+						width="267"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-43"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Courier New" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="CP1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.TotalPageNumber.Prefix} +" "+ $V{PAGE_NUMBER} + " " +$R{Report.TotalPageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="-269"
+						width="268"
+						height="19"
+						key="textField-44"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Right">
+						<font fontName="Courier New" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.PageNumber.Prefix}+" " + $V{PAGE_NUMBER} +" "+ $R{Report.PageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="268"
+						y="-269"
+						width="267"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-46"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Courier New" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="CP1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.TotalPageNumber.Prefix} +" "+ $V{PAGE_NUMBER} + " " +$R{Report.TotalPageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="-269"
+						width="268"
+						height="19"
+						key="textField-47"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Right">
+						<font fontName="Courier New" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$R{Report.PageNumber.Prefix}+" " + $V{PAGE_NUMBER} +" "+ $R{Report.PageNumber.Suffix}]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="20"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="20"
+						key="subreport-1"/>
+					<subreportParameter  name="BSHX0QTT.HasQTTJ">
+						<subreportParameterExpression><![CDATA[$P{BSHX0QTT.HasQTTJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSHX0QTT.SR.QTTJ">
+						<subreportParameterExpression><![CDATA[$P{BSHX0QTT.SR.QTTJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSHX0QTT.DS.QTTJ">
+						<subreportParameterExpression><![CDATA[$P{BSHX0QTT.DS.QTTJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSHX0QTT.DS.QTTR">
+						<subreportParameterExpression><![CDATA[$P{BSHX0QTT.DS.QTTR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSHX0QTT.HasQTTR">
+						<subreportParameterExpression><![CDATA[$P{BSHX0QTT.HasQTTR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSHX0QTT.SR.QTTR">
+						<subreportParameterExpression><![CDATA[$P{BSHX0QTT.SR.QTTR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="REPORT_RESOURCE_BUNDLE">
+						<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{REPORT_DATA_SOURCE}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{BSHX0QTT.SR.QTT0}]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

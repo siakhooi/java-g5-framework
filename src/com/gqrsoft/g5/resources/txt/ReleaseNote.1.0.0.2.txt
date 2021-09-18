@@ -1,0 +1,40 @@
+Release Version: 1.0.0.2
+Release Date: 15 Apr 2008
+Description: 
+
+* bug: AboutSystemPropertiesForm: title not in lang file.
+* bug: frame: eventAfterVisible() not work for dialog (modal type)
+* enhance: frame: add eventBeforeVisible()
+* bug: ButtonForm/ImageForm: setDefaultButton not work for embedded Form.
+* enhance: ButtonForm/ImageForm: allow to set Button invisible
+           add boolean showButton();
+* enhance: ButtonForm/ImageForm: lang support version for addI18nButton(**)
+           add addButton(**);
+* enhance: MenuForm: add Separator support for JMenuBar, ignore by TreeView
+           add addSeparator();
+* enhance: ReportExecutionForm
+           remove support for JasperReport XML file
+           remove support for ReportDesign
+           remove support for Report Template Control
+           add putResourceBundle(**) to use custom lang file.
+           add addResourceBundle(String)
+           add getPdfFile(), default to call a FileDialog
+* enhance: ListForm
+           add auto exception handling for 8 buttons (except Close & Reload) - execute*(**) throws Exception
+           add cmd.list.getTableModel()
+* enhance: ModeEntryForm: allow customize buttons for each mode.
+* enhance: cmd.lang: additional Resource Bundles support.
+           add cmd.lang.addBaseName(basename);
+* enhance: cmd.icon: new cmd, allow user to access built-in ImageIcon.
+* enhance: cmd.log
+           add cmd.log.warning(**)
+           add cmd.log.info(**)
+* enhance: cmd.local
+           change type to FormParameters
+           add data types: TableModel tableModel
+                           Object objectValue
+                           Object[] objectValues
+                           Object[][] object2DValues
+* enhance: cmd.global
+           add data types: String[], int[], Object[]
+        

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="BSJX0RCP_HB"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="BSJX0RCP.HasRCPJ" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BSJX0RCP.HasRCPR" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BSJX0RCP.DS.RCPR" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSJX0RCP.DS.RCPJ" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSJX0RCP.SR.RCPR" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="BSJX0RCP.SR.RCPJ" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="BSJX0RCP.DS.RCP" isForPrompting="false" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="BSJX0RCP.SR.RCP" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="SHOW_DEMO" isForPrompting="false" class="java.lang.Boolean">
+		<defaultValueExpression ><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CMP.CurCde" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CMPS.Sign1" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="CMPS.Sign2" isForPrompting="false" class="java.lang.String"/>
+	<queryString><![CDATA[select * FROM BSRCP]]></queryString>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="111"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="20"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="20"
+						key="subreport-1"/>
+					<subreportParameter  name="BSJX0RCP.HasRCPJ">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.HasRCPJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.HasRCPR">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.HasRCPR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.DS.RCPR">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.DS.RCPR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.DS.RCPJ">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.DS.RCPJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.SR.RCPR">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.SR.RCPR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BSJX0RCP.SR.RCPJ">
+						<subreportParameterExpression><![CDATA[$P{BSJX0RCP.SR.RCPJ}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SHOW_DEMO">
+						<subreportParameterExpression><![CDATA[$P{SHOW_DEMO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CMP.CurCde">
+						<subreportParameterExpression><![CDATA[$P{CMP.CurCde}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CMPS.Sign1">
+						<subreportParameterExpression><![CDATA[$P{CMPS.Sign1}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CMPS.Sign2">
+						<subreportParameterExpression><![CDATA[$P{CMPS.Sign2}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="REPORT_RESOURCE_BUNDLE">
+						<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{BSJX0RCP.DS.RCP}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{BSJX0RCP.SR.RCP}]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

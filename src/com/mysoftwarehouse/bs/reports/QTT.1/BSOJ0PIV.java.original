@@ -1,0 +1,90 @@
+/*
+ * Copyright 2007 GQR Solutions. All rights reserved.
+ * PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+package com.mysoftwarehouse.bs.NO.O;
+
+import com.gqrsoft.g5.developer.form.ReportExecutionForm;
+import com.gqrsoft.g5.developer.publicobject.ReportExecutionException;
+import com.mysoftwarehouse.bs.conf.DONGLE;
+import com.mysoftwarehouse.bs.conf.MAP;
+import com.mysoftwarehouse.bs.conf.REPORT;
+import com.mysoftwarehouse.bs.data.GET;
+import com.mysoftwarehouse.bs.data.PivEnum;
+import com.mysoftwarehouse.bs.db.CFG.CFGI;
+import com.mysoftwarehouse.bs.db.PIV.PIV_OJ0PIV;
+import java.io.InputStream;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author Ng Siak Hooi
+ */
+public class BSOJ0PIV extends ReportExecutionForm {
+
+    @Override
+    protected void initReport() throws ReportExecutionException {
+        String r = REPORT.REPORT_PATH + "BSOX0PIV.jasper";
+        InputStream in = BSOJ0PIV.class.getResourceAsStream(r);
+        super.loadCompiledReport(in);
+    }
+    String FrmPiv = "";
+    String rsNameCmp = "BSOJ0PIV.rsCmp";
+
+    @Override
+    protected void prepareExecution() throws ReportExecutionException {
+        try {
+            String rsName = "BSOJ0PIV";
+            FrmPiv = cmd.in.map.texts.get(MAP.BSPIV.FROM);
+            String Cmp = GET.Cmp(this);
+            PIV_OJ0PIV.select(this, rsName, Cmp, FrmPiv);
+            super.useResultSetDataSource(rsName);
+            PIV_OJ0PIV.selectCmp(this, rsNameCmp, Cmp);
+        } catch (SQLException ex) {
+            cmd.log.severe("BSOJ0PIV.error", ex);
+        }
+    }
+
+    @Override
+    protected void initExecution() throws ReportExecutionException {
+        String Cmp = GET.Cmp(this);
+        super.putParameter(REPORT.USER_ID, Cmp);
+
+        String printDte = cmd.cal.getISO8601FormattedNow();
+        super.putParameter(REPORT.PRINT_DATE, printDte);
+
+        super.putResourceBundle(REPORT.RESOURCEBUNDLENAME);
+
+        String fmt = cmd.in.map.texts.get(MAP.BSCFG.PIVFORMAT);
+        switch (PivEnum.Format.get(fmt)) {
+            case B:
+                InputStream piv_hb = BSOJ0PIV.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSOX0PIV_HB.jasper");
+                super.putCompiledSubreport("BSOX0PIV.SR.PIV_H", piv_hb);
+                super.putDataSource("BSOX0PIV.DS.PIV_H", cmd.db.getResultSet(rsNameCmp));
+                break;
+            case T:
+                InputStream piv_ht = BSOJ0PIV.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSOX0PIV_HT.jasper");
+                super.putCompiledSubreport("BSOX0PIV.SR.PIV_H", piv_ht);
+                super.putDataSource("BSOX0PIV.DS.PIV_H", cmd.db.getResultSet(rsNameCmp));
+                break;
+            case I:
+                InputStream piv_hi = BSOJ0PIV.class.getResourceAsStream(
+                        REPORT.REPORT_PATH + "BSOX0PIV_HI.jasper");
+                super.putCompiledSubreport("BSOX0PIV.SR.PIV_H", piv_hi);
+                super.putDataSource("BSOX0PIV.DS.PIV_H", cmd.db.getResultSet(rsNameCmp));
+
+                super.putParameter("BSOX0PIV.IMG.HEAD", CFGI.getLetterHead(this, Cmp));
+                break;
+        }
+
+        super.putParameter(REPORT.SHOW_DEMO, new Boolean(DONGLE.isDemoMode(this)));
+        super.putParameter(REPORT.CURCDE, GET.CurCde(this));
+    }
+
+    @Override
+    public String getFormTitle() {
+        return "BSOJ0PIV.title";
+    }
+}

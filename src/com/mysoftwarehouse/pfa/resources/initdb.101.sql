@@ -1,0 +1,25 @@
+-- Copyright 2007 GQR Solutions. All rights reserved.
+-- PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+--
+-- initdb.101.sql - database upgrade from 1.00 to 1.01
+--
+
+ALTER TABLE PFCFG ADD COLUMN ShowHelp CHAR(1) DEFAULT 'Y' BEFORE CURTXNID;
+
+ALTER TABLE PFCFGH ADD COLUMN ShowHelp CHAR(1);
+
+UPDATE PFCFG SET ShowHelp='Y';
+
+ALTER TABLE PFACC ADD COLUMN Status CHAR(1) DEFAULT 'A';
+
+ALTER TABLE PFACCH ADD COLUMN Status CHAR(1);
+
+UPDATE PFACC SET Status='A';
+
+ALTER TABLE PFACC ADD COLUMN ShowInMain CHAR(1) DEFAULT 'Y';
+
+ALTER TABLE PFACCH ADD COLUMN ShowInMain CHAR(1);
+
+UPDATE PFACC SET ShowInMain='Y';
+
+UPDATE PFDB SET Version=101 WHERE Typ='A';

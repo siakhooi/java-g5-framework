@@ -1,0 +1,12 @@
+Release Version: 1.0.1.4
+Release Date: 23 Sep 2008
+Description: small bugs/enhancements
+
+* bugfix: rockeyCommands: private byte[] buf = new byte[1024];
+* bugfix: fieldForm: add addRadioboxField()/addComboField()
+                     deprecate addRadioboxfield()/addCombofield()
+* bugfix: windows positioning: check if x<0 then x=0, if y<0 then y=0
+* enhance: add cmd.db.smartStart(); 
+           add cmd.db.smartComplete(); auto rollback on unable to commit
+* bugfix: load only default language on start (not all built-in language)
+* enhance: add addLanguage(LanguageEnum.BuiltInApplicationLanguage)

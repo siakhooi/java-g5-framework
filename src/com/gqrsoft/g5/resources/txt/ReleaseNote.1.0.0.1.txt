@@ -1,0 +1,27 @@
+Release Version: 1.0.0.1
+Release Date: 4 Apr 2008
+Description: 
+
+* enhance: AboutApplicationForm: new form
+* enhance: ReleaseNoteForm: new form
+* enhance: AboutSystemPropertiesForm: new form
+* enhance: add cmd.appinfo.showAboutApplication()
+           add cmd.appinfo.showReleaseNote()
+           add cmd.appinfo.showSystemProperties()
+* enhance: EntryForm/cmd.entry: to explicitly verify fieldName
+           add cmd.entry.verify(String fieldName)
+* enhance: ImageForm: allow click on Image
+           add void userAction()
+           add boolean hasAction()
+* enhance: ListForm: Manipulate selection
+           add cmd.list.selectRow(int n)
+           add cmd.list.selectFirstRow()
+           add cmd.list.selectLastRow()
+           add cmd.list.clearSelection()
+           add cmd.list.getRowCount()
+           add cmd.list.addRowSelection(int r1, int r2)
+* enhance: StyledTextForm: Option for ScrollPane
+           add boolean useScrollPane()
+* enhance: cmd.LineWriter: rename from cmd.line.* to cmd.linewrite.*
+* enhance: add cmd.LineReader: read line by line
+* enhance: add cmd.rockey: Rockey software control

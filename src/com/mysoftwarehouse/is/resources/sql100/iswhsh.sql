@@ -1,0 +1,28 @@
+-- Copyright 2007 GQR Solutions. All rights reserved.
+-- PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+--
+-- Cmp History
+--
+
+DROP SEQUENCE ISWHSHSEQ IF EXISTS;
+
+CREATE SEQUENCE ISWHSHSEQ AS INTEGER
+START WITH 0 INCREMENT BY 1;
+
+DROP TABLE ISWHSH IF EXISTS;
+
+CREATE CACHED TABLE ISWHSH(
+        Whs     CHAR(10) NOT NULL,
+        HisSeq	INT NOT NULL,
+	HisDte	DATETIME,
+	HisAct	CHAR(1),
+	HisRmk	VARCHAR(200),
+-- COPY FROM ISWHS START
+        Nme     VARCHAR(30) NOT NULL,
+        CstTyp  CHAR(1) NOT NULL,
+        Remark  VARCHAR(200),
+-- COPY FROM ISWHS END
+	PRIMARY KEY(Whs, HisSeq));
+	
+
+	

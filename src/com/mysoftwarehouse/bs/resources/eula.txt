@@ -1,0 +1,101 @@
+End User License Agreement (EULA)
+
+1.  You should carefully read the following terms and conditions before using, 
+    installing or distributing the accompanying software (the "Software"). 
+    Unless you have a different license agreement signed by GQR Solutions (the 
+    "Company"). Your use, distribution, or installation of the Software 
+    indicates your acceptance of this agreement ("License").
+2.  All rights of any kind in the Software, which are not expressly granted in 
+    this License, are entirely and exclusively reserved to and by the Company.
+3.  The Company reserves the right to revise the terms and conditions of this 
+    license at any time, at its sole discretion and without any prior notice.
+
+Part I - Commercial Version
+4.  Limited Warranty - the Company warrants that for a period of fifteen (15) 
+    days from the date of acquisition, the hardware key (the "Dongle"), if 
+    operated as directed, wills substantially archieve the functionality 
+    described in the documentation. The Company does not warrant, however, that 
+    your use of the Software will be uninterrupted or that the operation of 
+    the Software will be error-free or secure. In addition, the security 
+    mechanisms implemented by the Software have inherent limitations, and you 
+    must determine that the Software sufficiently meets your requirements.
+5.  This is a limited warranty and it is the only warranty made by the Company. 
+    The Company makes no other express warranty and no warranty of 
+    noninfringement of third parties' rights. The duration of implied 
+    warranties, including without limitations, warranties of merchantability 
+    and of fitness for a particular purpose, is limited to the above limited 
+    warranty period. No the Company dealer, agent, or employee is authorized to 
+    make any modifications, extensions, or additions to this warranty.
+6.  If you violate the terms of this license during the warranty period, this 
+    warranty shall immediately be terminated.
+7.  Subject to payment of applicable license fees, the Company grants to you a 
+    non-exclusive license to use the Software in the manner described in 
+    Part II.
+
+Part II - All License Grants
+8.  Disclaimer of Warranty - The software is provided on an "AS IS" basis, 
+    without warranty of any kind, whether express, implied or statutory, 
+    including, but without limitation, the implied warranties of noninfringement 
+    of third party rights, merchantability, and fitness for a particular purpose. 
+    The entire risk as to the quality and performance of the Software is borne 
+    by you.  Should the Software prove defective, you and not the Company assume 
+    the entire cost of any service and repair. In addition, the security 
+    mechanisms implemented by the Software have inherent limitations, and you 
+    must determine that the Software sufficiently meets your requirements. 
+9.  Updates - the Company may make available updates to the Software. All 
+    updates to the Software are governed by this license, unless other license 
+    terms are provided with the update and may be installed automatically; no 
+    confirmation by you is required.
+10. You may:
+    a. Use the Software on any single computer;
+    b. Use the Software on a network, provided that each person accessing the 
+       Software through the network must have a copy licensed to that person;
+    c. Use the Software on a second computer so long as only one copy is used 
+       at a time;
+    d. Copy the Software for archival purposes, provided any copy must contain 
+       all of the original Software's proprietary notices; or
+    e. If you have purchased a license for multiple users, the software may be 
+       installed on only one server computer and the number of users is the 
+       number of users that may use the software concurrently.
+11. You may not:
+    a. Permit other individuals to use the Software except under the terms 
+       listed above;
+    b. Permit concurrent use of the Software by more than the number of users 
+       specified in your license.
+    c. Modify, emulate, clone, translate, reverse engineer, decompile, 
+       disassemble, or create derivative works based on the Software;
+    d. Copy the Software other than as specified above;
+    e. Rent, lease, sell, grant a security interest in, or otherwise transfer 
+       rights to the Software; 
+    f. Remove any proprietary notices or labels on the Software;
+    g. Charge, or request donations, for any copies, however made, and from 
+       distributing the Software with other products of any kind, commercial or 
+       otherwise, without prior written permission from the Company; or
+    h. Permit anyone else to do any of the above specified.
+12. Any such unauthorized use described in (11) shall result in immediate and 
+    automatic termination of this license and may result in criminal and/or 
+    civil prosecution.
+13. Title, ownership rights, and intellectual property rights in the Software 
+    shall remain in the Company and/or its suppliers. The Software is protected 
+    by the copyright laws and treaties. Title and related rights in the content 
+    accessed throught the Software is the property of the applicable content 
+    owner and may be protected by applicable law. This License gives you no 
+    rights to such content.
+14. Termination - The license will terminate automatically if you fail to comply 
+    with the limitations described herein.  On termination, you must destroy all 
+    copies of the Software.
+15. Limitation of Liability - Under no circumstances and under no legal theory, 
+    tort, contract, or otherwise, shall the Company or its suppliers or 
+    resellers be liable to you or any other person for any indirect, special, 
+    incidental, or consequential damages of any character including, without 
+    limitation, damages for loss of goodwill, work stoppage, computer failure or 
+    malfunction, or any and all other commercial damages or losses. In no event 
+    will the Company be liable for any damages in excess of the amount the 
+    Company received from you for a license to the Software, even if the Company 
+    shall have be informed of the possibility of such damages, or for any claim 
+    by any other party.
+16. If you do not agree with the terms of this license you must remove the 
+    Software entirely from your storage devices and cease to use the Software.
+
+Thank you for using the GQR Products.
+

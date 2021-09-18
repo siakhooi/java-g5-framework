@@ -1,0 +1,34 @@
+-- Copyright 2007 GQR Solutions. All rights reserved.
+-- PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+--
+-- purchase payment type tables
+--
+
+DROP TABLE BSPY IF EXISTS;
+
+CREATE CACHED TABLE BSPY(
+	Cmp	CHAR(10),
+	PayTyp	CHAR(10),
+	Nme	CHAR(30),
+	PRIMARY KEY(Cmp, PayTyp));
+
+-- History tables
+
+DROP SEQUENCE BSPYHSEQ IF EXISTS;
+
+CREATE SEQUENCE BSPYHSEQ AS INTEGER
+START WITH 0 INCREMENT BY 1;
+
+DROP TABLE BSPYH IF EXISTS;
+
+CREATE CACHED TABLE BSPYH(
+	Cmp	CHAR(10),
+	HisSeq	INT NOT NULL,
+	HisDte	DATETIME,
+	HisAct	CHAR(1),
+	HisRmk	VARCHAR(200),
+-- COPY FROM BSPY START
+	PayTyp	CHAR(10),
+	Nme	CHAR(30),
+-- COPY FROM BSPY END
+	PRIMARY KEY(Cmp, HisSeq));
