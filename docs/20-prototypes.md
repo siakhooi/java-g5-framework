@@ -25,7 +25,7 @@
 
 - Due to the prototypes are self-signed, your system's security will block it for security purposes.
   - In order to by pass it, do the following:
-  - Control Panel > Java > Security Tab > Exception Site List - add `http://siakhooi.github.io/java-g5-framework/`
+  - Control Panel > Java > Security Tab > Exception Site List - add `https://siakhooi.github.io/java-g5-framework/`
     ![Java-Control-Panel](java-control-panel.png)
 
 ### How to run
