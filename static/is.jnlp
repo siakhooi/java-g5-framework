@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp codebase="http://siakhooi.github.io/java-g5-framework/" href="is.jnlp">
+<jnlp codebase="https://siakhooi.github.io/java-g5-framework/" href="is.jnlp">
   <information>
     <title>Inventory Suite</title>
     <vendor>GQR Solutions</vendor>
-    <homepage href="http://siakhooi.github.io/java-g5-framework" />
+    <homepage href="https://siakhooi.github.io/java-g5-framework" />
     <description>Inventory Suite</description>
     <icon href="is.png" />
     <shortcut online="true">

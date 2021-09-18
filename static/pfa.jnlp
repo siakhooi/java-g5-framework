@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp codebase="http://siakhooi.github.io/java-g5-framework/" href="pfa.jnlp">
+<jnlp codebase="https://siakhooi.github.io/java-g5-framework/" href="pfa.jnlp">
   <information>
     <title>Personal Finance Assistant</title>
     <vendor>GQR Solutions</vendor>
-    <homepage href="http://siakhooi.github.io/java-g5-framework" />
+    <homepage href="https://siakhooi.github.io/java-g5-framework" />
     <description>Personal Finance Assistant (PFA) is a tool to track your personal finance status.</description>
     <icon href="pfa.png" />
     <shortcut online="true">
