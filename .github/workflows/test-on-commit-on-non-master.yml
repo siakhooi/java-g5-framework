@@ -20,6 +20,9 @@ jobs:
         run: ant
       - name: deploy jar
         run: . .github/workflows/deploy_jar.sh
+        env:
+          CODESIGN_STORE: ${{ secrets.CODESIGN_STORE }}
+          CODESIGN_STORE_PASSWORD: ${{ secrets.CODESIGN_STORE_PASSWORD }}
       - uses: actions/setup-node@v2
         with:
           node-version: 16
