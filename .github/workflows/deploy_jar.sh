@@ -7,7 +7,7 @@ cp lib.unsigned/*.jar static/lib/
 CODESIGN_ALIAS=g5-java-application-framework
 
 STOREFILE=$(mktemp --suffix=.pkcs)
-echo $CODESIGN_STORE | sed 's/ //g' | base64 -d >$STOREFILE
+echo $CODESIGN_STORE | base64 -d >$STOREFILE
 
 TEMPDIR=$(mktemp -d)
 (
