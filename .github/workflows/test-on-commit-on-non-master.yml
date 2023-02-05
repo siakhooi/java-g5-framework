@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up JDK 8
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           java-version: "8"
           distribution: "adopt"
@@ -23,12 +23,12 @@ jobs:
         env:
           CODESIGN_STORE: ${{ secrets.CODESIGN_STORE }}
           CODESIGN_STORE_PASSWORD: ${{ secrets.CODESIGN_STORE_PASSWORD }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm install
       - run: npx docusaurus build
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: build
           path: build
